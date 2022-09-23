@@ -1,7 +1,7 @@
 package co.edu.uniandes.dse.parcialejemplo.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +18,6 @@ public class HabitacionEntity extends BaseEntity{
 	private Integer numBanos;
 	
 	@PodamExclude
-	@OneToMany(mappedBy = "habitaciones")
+	@ManyToOne
 	private HotelEntity hotel;
 }

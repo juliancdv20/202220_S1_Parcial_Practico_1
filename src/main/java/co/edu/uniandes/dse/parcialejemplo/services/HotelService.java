@@ -20,10 +20,7 @@ public class HotelService {
 
 	@Autowired
 	HotelRepository hotelRepository;
-	
-	@Autowired
-	HotelEntity hotelEntity;
-	
+		
 	/**
 	 * Se encarga de crear un Hotel en la base de datos.
 	 *
@@ -34,10 +31,10 @@ public class HotelService {
 	@Transactional
 	public HotelEntity createHotel(HotelEntity hotel) throws IllegalOperationException {
 		log.info("Inicia proceso de creación del hotel");
-		if (!hotelRepository.findByNombre(hotelEntity.getNombre()).isEmpty()) {
+		if (!hotelRepository.findByNombre(hotel.getNombre()).isEmpty()) {
 			throw new IllegalOperationException("El nombre de este hotel ya existe");
 		}
-		if (hotelEntity.getNumEstrellas() < 2 || hotelEntity.getNumEstrellas() > 6) {
+		if (hotel.getNumEstrellas() < 2 || hotel.getNumEstrellas() > 6) {
 			throw new IllegalOperationException("El número de estrellas del hotel debe estar entre 2 y 6");
 
 		}

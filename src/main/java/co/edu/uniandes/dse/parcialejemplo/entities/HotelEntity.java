@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +20,6 @@ public class HotelEntity extends BaseEntity{
 	private Integer numEstrellas;
 	
 	@PodamExclude
-	@ManyToOne
+	@OneToMany(mappedBy = "hotel")
 	private List<HabitacionEntity> habitaciones = new ArrayList<>();
 }

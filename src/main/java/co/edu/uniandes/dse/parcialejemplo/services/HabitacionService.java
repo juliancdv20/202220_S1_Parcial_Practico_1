@@ -20,10 +20,7 @@ public class HabitacionService {
 
 	@Autowired
 	HabitacionRepository habitacionRepository;
-	
-	@Autowired
-	HabitacionEntity habitacionEntity;
-	
+		
 	/**
 	 * Se encarga de crear un Habitacion en la base de datos.
 	 *
@@ -34,7 +31,7 @@ public class HabitacionService {
 	@Transactional
 	public HabitacionEntity createHabitacion(HabitacionEntity habitacion) throws IllegalOperationException {
 		log.info("Inicia proceso de creación del habitacion");
-		if (!(habitacionEntity.getNumBanos() <= habitacionEntity.getNumPersonas())) {
+		if (!(habitacion.getNumBanos() <= habitacion.getNumPersonas())) {
 			throw new IllegalOperationException("El numero de banios de la habitacion no puede ser mayor al numero de personas");
 		}
 		

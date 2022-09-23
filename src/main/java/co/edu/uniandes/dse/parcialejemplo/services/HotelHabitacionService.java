@@ -48,7 +48,7 @@ public class HotelHabitacionService {
 			throw new EntityNotFoundException("Hotel no encontrado");
 
 		if (habitacionEntity.isEmpty())
-			throw new EntityNotFoundException("Especialidd no encontrada");
+			throw new EntityNotFoundException("Habitacion no encontrada");
 
 		hotelEntity.get().getHabitaciones().add(habitacionEntity.get());
 		log.info("Termina proceso de asociarle una habitacion al hotel con id = {0}", hotelId);
